@@ -14,21 +14,24 @@ app.use(express.json())
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://task-manager-seven-black.vercel.app' // ✅ your deployed frontend
-]
+  'https://task-manager-seven-black.vercel.app',
+  'https://task-manager-iy7peces9-eishita-pariks-projects.vercel.app', // ✅ NEW frontend URL
+];
+
 
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true)
+      callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'))
+      callback(new Error('Not allowed by CORS'));
     }
   },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type'],
   credentials: true,
-}))
+}));
+
 
 // routes
 app.use('/api/task', Taskrouter)
