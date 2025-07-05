@@ -1,21 +1,19 @@
-import express from 'express'
-import mongoose from 'mongoose'
-import dotenv from 'dotenv'
-import cors from 'cors'
-import Taskrouter from './routes/Task.route.js'
+import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import Taskrouter from './routes/Task.route.js';
 
-dotenv.config()
+dotenv.config();
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 10000;
+const app = express();
 
-const app = express()
+app.use(express.json());
 
-app.use(express.json())
-
-// ✅ CORS configuration (for localhost + Vercel frontend)
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://task-manager-7ns0.onrender.com'
+  'https://task-manager-seven-black.vercel.app', // your frontend
 ];
 
 app.use(cors({
@@ -23,28 +21,18 @@ app.use(cors({
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error('❌ Not allowed by CORS'));
+      callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type'],
+  credentials: true,
 }));
 
-// ✅ Handle preflight requests
-app.options('*', cors());
-
-// ✅ Routes
 app.use('/api/task', Taskrouter);
 
-// ✅ MongoDB connection
-mongoose.connect(process.env.MONGODB_CONN).then(() => {
-  console.log('✅ Database connected.');
-}).catch(err => {
-  console.log('❌ Database connection failed.', err);
-});
+mongoose.connect(process.env.MONGODB_CONN)
+  .then(() => console.log('✅ MongoDB connected'))
+  .catch((err) => console.log('❌ MongoDB error', err));
 
-// ✅ Start server
-app.listen(PORT, () => {
-  console.log('🚀 Server running on port:', PORT);
-});
+app.listen(PORT, () => console.log(`🚀 Server running on ${PORT}`));
