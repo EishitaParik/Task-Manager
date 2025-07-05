@@ -13,8 +13,9 @@ app.use(express.json());
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://task-manager-seven-black.vercel.app', // your frontend
+  'https://task-manager-seven-black.vercel.app', // your deployed frontend
 ];
+
 
 app.use(cors({
   origin: function (origin, callback) {
