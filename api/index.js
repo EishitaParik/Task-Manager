@@ -11,20 +11,40 @@ const PORT = process.env.PORT
 const app = express()
 
 app.use(express.json())
+
+// ✅ CORS configuration (for localhost + Vercel frontend)
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://task-management-app-one-taupe.vercel.app'
+];
+
 app.use(cors({
-    origin: 'http://localhost:5173'
-}))
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('❌ Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
 
+// ✅ Handle preflight requests
+app.options('*', cors());
 
-// routes 
+// ✅ Routes
+app.use('/api/task', Taskrouter);
 
-app.use('/api/task', Taskrouter)
-
+// ✅ MongoDB connection
 mongoose.connect(process.env.MONGODB_CONN).then(() => {
-    console.log('Database connected.')
-}).catch(err => console.log('Database connection failed.', err))
+  console.log('✅ Database connected.');
+}).catch(err => {
+  console.log('❌ Database connection failed.', err);
+});
 
-
+// ✅ Start server
 app.listen(PORT, () => {
-    console.log('Server running on port:', PORT)
-})
+  console.log('🚀 Server running on port:', PORT);
+});
