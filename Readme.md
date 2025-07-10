@@ -17,7 +17,8 @@ This is the **frontend** of the Task Manager web application, built using **Reac
 - 📋 View task list with status (e.g. Pending, Completed)  
 - ✅ Visual task status using colored badges  
 - 🧭 Navigation bar to switch between views  
-- 🎯 Responsive UI using Tailwind CSS  
+- 🎯 Responsive UI using Tailwind CSS
+- CRUD (Create, Read, Update, Delete)
 - 🔗 Integrated with a backend (Node.js + Express + MongoDB)
 
 ---
