@@ -1,32 +1,68 @@
-# 📝 Task Manager – Frontend (React + Tailwind)
+# 📝 Task Manager – Frontend
 
-[🌐 Live Demo](https://task-manager-seven-black.vercel.app/)  
-[📂 Full Project Repo](https://github.com/EishitaParik/Task-Manager)
+A responsive and modern frontend for a full-stack Task Manager app built using **React**, **Tailwind CSS**, and **React Router**. It allows users to manage their daily tasks efficiently, integrating seamlessly with a backend API (Node.js + Express + MongoDB).
+
+---
+
+## 🌐 Live Demo
+
+👉 [Live Site](https://your-deployment-link.com)
+
+## 📂 Full Project Repo
+
+🔗 [Backend Repo](https://github.com/yourusername/task-manager-backend)
 
 ---
 
 ## 📌 Overview
 
-This is the **frontend** of the Task Manager web application, built using **React**, **Tailwind CSS**, and **React Router**. It provides a clean UI for users to create, view, and manage their tasks, interacting with the backend via REST API.
+This is the **frontend** of the Task Manager web application. It provides a clean interface where users can:
+
+- 🧾 Create tasks
+- 📋 View all tasks
+- 🖋️ Edit existing tasks
+- ❌ Delete completed/unwanted tasks
+- ✅ Track task completion status
+
+All operations are synced with the backend via REST API calls.
 
 ---
 
 ## ✨ Features
 
-- 🧾 Add new tasks (title + description)  
-- 📋 View task list with status (e.g. Pending, Completed)  
-- ✅ Visual task status using colored badges  
-- 🧭 Navigation bar to switch between views  
-- 🎯 Responsive UI using Tailwind CSS
-- CRUD (Create, Read, Update, Delete)
-- 🔗 Integrated with a backend (Node.js + Express + MongoDB)
+- 🧾 **Add New Tasks** – Title and description
+- 📋 **View Task List** – With status indicators (Pending, Completed)
+- ✅ **Colored Badges** – For visual task status
+- 🔄 **CRUD Operations** – Create, Read, Update, Delete
+- 🧭 **Navigation Bar** – Easily switch between task views
+- 🎯 **Responsive UI** – Optimized with Tailwind CSS for all screen sizes
+- 🌐 **API Integration** – Fully functional with backend server
 
 ---
 
 ## ⚙️ Technologies Used
 
-- [React](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [React Router DOM](https://reactrouter.com/)
-- [Vite](https://vitejs.dev/) – frontend bundler
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=react,tailwind,vite,js" />
+  <img src="https://img.shields.io/badge/React%20Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white" />
+  <img src="https://img.shields.io/badge/REST%20API-2C8EBB?style=for-the-badge&logo=fastapi&logoColor=white" />
+</div>
+
+---
+
+## 📸 Screenshots
+
+| Home View | Add Task | Task Status |
+|---|---|---|
+| ![](https://user-images.githubusercontent.com/yourusername/home-view.png) | ![](https://user-images.githubusercontent.com/yourusername/add-task.png) | ![](https://user-images.githubusercontent.com/yourusername/status-badge.png) |
+
+---
+
+## 📦 Getting Started
+
+```bash
+git clone https://github.com/yourusername/task-manager-frontend.git
+cd task-manager-frontend
+npm install
+npm run dev
 
