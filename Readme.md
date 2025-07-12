@@ -6,11 +6,7 @@ A responsive and modern frontend for a full-stack Task Manager app built using *
 
 ## 🌐 Live Demo
 
-👉 [Live Site](https://your-deployment-link.com)
-
-## 📂 Full Project Repo
-
-🔗 [Backend Repo](https://github.com/yourusername/task-manager-backend)
+👉 [Live Site](https://task-manager-seven-black.vercel.app/)
 
 ---
 
@@ -47,14 +43,6 @@ All operations are synced with the backend via REST API calls.
   <img src="https://img.shields.io/badge/React%20Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white" />
   <img src="https://img.shields.io/badge/REST%20API-2C8EBB?style=for-the-badge&logo=fastapi&logoColor=white" />
 </div>
-
----
-
-## 📸 Screenshots
-
-| Home View | Add Task | Task Status |
-|---|---|---|
-| ![](https://user-images.githubusercontent.com/yourusername/home-view.png) | ![](https://user-images.githubusercontent.com/yourusername/add-task.png) | ![](https://user-images.githubusercontent.com/yourusername/status-badge.png) |
 
 ---
 
